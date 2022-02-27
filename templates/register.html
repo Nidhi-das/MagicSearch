@@ -1,0 +1,275 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registration Form
+{% endblock title %}
+
+{% load static %}
+
+{% block body %}
+<script>
+    function myFunction() {
+        var temp = document.getElementById("id1");
+        if (temp.type === "password") {
+            temp.type = "text";
+        }
+        else {
+            temp.type = "password";
+        }
+    }
+</script>
+
+<style>
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhRI5eoBmELoh67aMy5boqD75dFqA11D_UOQ&usqp=CAU');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        width: 100%;
+    }
+    
+    /* Full-width input fields */
+    input[type=text], input[type=password], input[type=email], input[type=date] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    /* Set a style for all buttons */
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    
+    /* Center the image and position the close button */
+    .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+    }
+    
+    img.avatar {
+      width: 40%;
+      border-radius: 50%;
+    }
+    
+    .container {
+      padding: 16px;
+    }
+    
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+    }
+    
+    /* Modal Content/Box */
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+    
+    
+    
+    /* Add Zoom Animation */
+    .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+    }
+    
+    @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)} 
+      to {-webkit-transform: scale(1)}
+    }
+      
+    @keyframes animatezoom {
+      from {transform: scale(0)} 
+      to {transform: scale(1)}
+    }
+    
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+      span.psw {
+         display: block;
+         float: none;
+      }
+      .cancelbtn {
+         width: 100%;
+      }
+
+    }
+
+    .btn {
+        color: #fff;
+        background-color: orangered;
+        width: 150px;
+        margin:0 auto;  
+        font-size: large;     
+    }
+
+  .sp {
+        float: right;
+    }
+
+    span.no {
+        font-size: large;
+        align-content: center;
+        text-align: center;
+        margin:0 auto;  
+    }
+
+    .imgcontainer {
+        font-size: larger;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    span#star {
+        color: red;
+    }
+
+    h3 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .p-viewer {
+        position: relative;
+        margin: -50px 10px;
+        float: right;
+    }
+  
+    .fa-eye {
+      color: #000;
+    }
+    
+    .heading {
+      color: purple;
+    }
+    
+    </style>
+   
+<div class="container" style="width:75%; ">
+ 
+    {% load static %}
+      <form class="modal-content animate" action="register" method="post">
+        {% csrf_token %}
+
+        <div class="imgcontainer">
+            <h3 class="heading">CUSTOMER REGISTRATION FORM </h3>
+        </div>
+    
+        <div class="container">
+          <label for="fname"><b>First Name  <span id="star">*</span>
+          </b></label>
+          <input type="text" placeholder="Enter your first name" name="fname" required>
+          
+          <br><br>
+
+          <label for="lname"><b>Last Name  <span id="star">*</span>
+          </b></label>
+          <input type="text" placeholder="Enter your last name" name="lname" required>
+          
+          <br><br>
+
+          <label for="dob"><b>Date of Birth  <span id="star">*</span>
+          </b></label>
+          &nbsp;
+          &nbsp;
+          <input type="date" placeholder="Enter your date of birth" name="dob" required>
+          
+          <br><br>
+
+          <div>
+            <label for="gender"><b>Gender  <span id="star">*</span>
+            </b></label>            
+              &nbsp;
+              &nbsp;
+              Male  <input type="radio"  name="gender" value="male" id="g"> 
+              &nbsp;
+              &nbsp;
+              Female   <input type="radio"  name="gender" value="female" id="g"> 
+              &nbsp;
+              &nbsp; 
+              Others   <input type="radio"  name="gender" value="others" id="g"> 
+          </div>
+
+          <br>
+
+          <label for="email"><b>Email  <span id="star">*</span>
+          </b></label>
+          <input type="email" placeholder="Enter your mail ID" id="email" name="email" required>
+          
+          <br><br>
+
+          <label for="contact"><b>Contact Number  <span id="star">*</span>
+          </b></label>
+          <input type="text" placeholder="Enter your contact number" id="contact" name="contact" required>
+          
+          <br><br>
+
+          <label for="username"><b>Username  <span id="star">*</span>
+          </b></label>
+          <input type="text" placeholder="Enter a username" name="username" required>
+          
+          <br><br>
+
+          <label for="password" ><b>Password  <span id="star">*</span>
+          </b>
+          </label>
+
+          <input type="password" id="id1" placeholder="Create a password with minimum 6 letters" name="password" required>
+        
+          <span for='icon' class="p-viewer" onclick="myFunction()">
+            <i class="fa fa-eye" aria-hidden="true"></i>
+          </span>
+          
+          <br><br>
+
+          <label for="password1"><b>Confirm Password  <span id="star">*</span>
+          </b></label>
+          <input type="password" placeholder="Enter your password again" name="password1" required>
+          
+          <br> <br>
+
+          <div class="center" style="margin-left:41%">
+          <button type="submit" class="btn">Register</button>
+        </div>
+          
+        </div>
+    
+        <br>
+      </form>
+{% endblock body %}

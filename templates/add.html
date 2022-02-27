@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    >
+
+    
+    <title>Add PG / House</title>
+
+    <style>
+    
+      ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 3px;
+          overflow: hidden;
+          background-color:#46368a; 
+          width: 100%;
+      }
+
+      li {
+        float: left;
+        border-right:1px solid #bbb;
+      }
+
+      li:last-child {
+        border-right: none;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 22px 22px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: white;
+        padding: 20px 20px;
+
+      }
+
+      .active {
+        background-color:white;
+
+      }
+
+      .welcome {
+        font-size: 18px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-link{
+    color:black;
+    font-weight: 600;
+}
+
+.navbar-brand{
+    color:black;
+    font-weight: 700;
+}
+
+.main{
+    background:url(https://d2bxpw04qb5rhq.cloudfront.net/production/property_image/image/111878/a44d57d8f76c01547a76bd7d56e15f588eb4e26cdb179f7867dbaec3c4aac1dd80a2a216bed105e1/3.jpg)no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+}
+
+.main h1{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.card{
+    border: none;
+} 
+
+.main label{
+    color:rgb(104,89,89);
+    font-weight: 600;
+}
+
+.main input{
+    outline: none;
+    padding: 0 20px;
+    /*height: 40px;
+    width: 90px;
+*/
+}
+
+.main .btn1{
+    background-color: OrangeRed;
+    color:white;
+    outline: none;
+    border: none;
+    width:90px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.btn1:hover{
+    background-color: tomato;
+    transition: 0.5s;
+}
+
+
+
+
+
+
+body {
+      font-family: Arial, Helvetica, sans-serif;
+  }
+
+  body {
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhRI5eoBmELoh67aMy5boqD75dFqA11D_UOQ&usqp=CAU');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      width: 100%;
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  img.avatar {
+    width: 40%;
+    border-radius: 50%;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  
+  
+  /* Add Zoom Animation */
+  .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+
+  }
+
+  .btn {
+      color: #fff;
+      background-color: orangered;
+      width: 150px;
+      margin:0 auto;  
+      font-size: large;     
+  }
+
+  span.no {
+      font-size: large;
+      align-content: center;
+      text-align: center;
+      margin:0 auto;  
+  }
+
+  .imgcontainer {
+      font-size: larger;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  span#star {
+      color: red;
+  }
+
+  .p-viewer {
+    position: relative;
+    margin: -50px 10px;
+    float: right;
+}
+
+.fa-eye {
+  color: #000;
+}
+
+.heading {
+  color: purple;
+}
+</style>
+    
+  </head>
+
+<body>
+    <navbar style="position: static;">
+        <ul>
+          
+          <li class="welcome" style="float:centre;" ><a href="/home">       Welcome to MAGIC SEARCH!!      </a></li>
+    
+          <li><a href="/home">Home</a></li>
+           <li style="float:right"><a href="/gallery">Gallery</a></li>
+          <li style="float: right;"><a href="/services">Services</a></li>
+          <li style="float:right"><a href="/helpDesk">Help Desk</a></li>
+          <li style="float:right"><a href="/about">About Us</a></li>
+          <li style="float:right"><a href="/">Logout</a></li>
+        </ul>
+        </navbar>
+    
+    
+        
+        
+        {% if messages %}
+          {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+          <strong>
+    
+            {{ message }}
+          </strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> 
+          {% endfor %}
+        {% endif %}
+
+
+  <div class="container" style="width: 100%; ">
+    {% load static %}
+    <form method="POST" action="add_instance" class="modal-content animate"  style="padding: 5%;">
+      {% csrf_token %}
+      <div class="imgcontainer">
+        <h3 class="heading">ADD DETAILS OF HOUSE</h3>
+    </div>
+    <br>
+      <div class="container">
+      <div>
+        <label for="category"><b>Category  <span id="star">*</span></b></label>
+            &nbsp;
+            &nbsp;
+            Paying Guest(PG)  <input type="radio"  name="type" value="pg"> 
+            &nbsp;
+            &nbsp;
+            Rental Home   <input type="radio"  name="type" value="rent">  
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="numberOfBedrooms"><b>Number of bedrooms<span id="star">*</span></b></label>
+        <input type="text" name="numberOfBedrooms" class="form-control" id="numberOfBedrooms" placeholder="Enter Number of Bedrooms">
+      </div>
+
+      <div class="form-group">
+        <label for="floor"><b>Floor Number<span id="star">*</span></b></label>
+        <input type="number" name="floor" class="form-control" id="floor" placeholder="Enter the floor number">
+      </div>
+
+      <br>
+      
+      <div>
+        <label for="lift"><b>Lift Availability<span id="star">*</span></b></label> 
+          &nbsp;
+          &nbsp;
+          Yes  <input type="radio"  name="lift" value="yes"> 
+          &nbsp;
+          &nbsp;
+          No   <input type="radio"  name="lift" value="no">  
+      </div>
+
+      <br>
+      
+      <div>
+        <label for="kitchen"><b>Kitchen Availability<span id="star">*</span></b></label>
+          &nbsp;
+          &nbsp;
+          Yes  <input type="radio"  name="kitchen" value="yes"> 
+          &nbsp;
+          &nbsp;
+          No   <input type="radio"  name="kitchen" value="no">  
+      </div>
+
+      <br>
+      
+      <div>
+      <label for="bathroom"><b>Attached Bathroom<span id="star">*</span></b></label>
+        &nbsp;
+        &nbsp;
+        Yes  <input type="radio"  name="bathroom" value="yes"> 
+        &nbsp;
+        &nbsp;
+        No   <input type="radio"  name="bathroom" value="no">  
+      </div>
+
+      <br>
+      
+      <div>
+        <label for="electricity"><b>24*7 Electricity Availability<span id="star">*</span></b></label>
+        &nbsp;
+        &nbsp;
+        Yes  <input type="radio"  name="electricity" value="yes"> 
+        &nbsp;
+        &nbsp;
+        No   <input type="radio"  name="electricity" value="no">  
+      </div>
+
+      <br>
+          
+      <div>
+        <label for="water"><b>24*7 Water Availability<span id="star">*</span></b></label>
+          &nbsp;
+          &nbsp;
+          Yes  <input type="radio"  name="water" value="yes"> 
+          &nbsp;
+          &nbsp;
+          No   <input type="radio"  name="water" value="no">  
+      </div>
+
+      <br>
+            
+        <div>
+          <label for="livingRoom"><b>Living Room Availability<span id="star">*</span></b></label>
+          &nbsp;
+            &nbsp;
+            Available  <input type="radio"  name="livingRoom" value="yes"> 
+            &nbsp;
+            &nbsp;
+            Unavailable   <input type="radio"  name="livingRoom" value="no">  
+        </div>
+      <br>
+      
+      <div>
+        <label for="gallery"><b>Balcony Availability<span id="star">*</span></b></label>
+        &nbsp;
+          &nbsp;
+          Available  <input type="radio"  name="gallery" value="yes"> 
+          &nbsp;
+          &nbsp;
+          Unavailable   <input type="radio"  name="gallery" value="no">   
+      </div>
+
+      <br>
+            
+        <div>
+          <label for="Wifi"><b>WiFi Availability<span id="star">*</span></b></label>
+          &nbsp;
+            &nbsp;
+            Available  <input type="radio"  name="Wifi" value="yes"> 
+            &nbsp;
+            &nbsp;
+            Unavailable   <input type="radio"  name="Wifi" value="no">  
+      </div>
+      <br>
+      
+        <div>
+          <label for="tv"><b>TV Availability<span id="star">*</span></b></label>
+            &nbsp;
+            &nbsp;
+            Available  <input type="radio"  name="tv" value="yes"> 
+            &nbsp;
+            &nbsp;
+            Unavailable   <input type="radio"  name="tv" value="no">   
+      </div>
+      <br>
+
+      <div>
+          <label for="pets"><b>Pets Allowed<span id="star">*</span></b></label>
+            &nbsp;
+            &nbsp;
+            Yes  <input type="radio"  name="pets" value="yes"> 
+            &nbsp;
+            &nbsp;
+            No   <input type="radio"  name="pets" value="no">  
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <label for="rent"><b>Rent (per month)<span id="star">*</span></b></label>
+        <input type="number" name="rent" class="form-control" id="rent" placeholder="Enter the rent to be paid monthly">
+      </div>
+
+      <div class="form-group">
+        <label for="vacancy"><b># Houses Vacant<span id="star">*</span></b></label>
+        <input type="number" name="vacancy" class="form-control" id="vacancy" placeholder="Enter number of Vacancies">
+      </div>
+
+      <div class="form-group">
+        <label for="phone"><b>Owner's Contact Number<span id="star">*</span></b></label>
+        <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter owner's contact number">
+      </div>
+
+      <div class="form-group">
+        <label for="address"><b>House Address<span id="star">*</span></b></label>
+        <input type="text" name="address" class="form-control" id="address" placeholder="Enter address of the house">
+      </div>
+      	
+
+      <div>
+        <label for="city"><b>Location<span id="star">*</span></b></label>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <select name="city" id="city" class="form-control">    
+            <option value="Hubli" class="form-control">Hubli</option>
+            <option value="Dharwad" class="form-control">Dharwad</option>
+            <option value="Belgaum" class="form-control">Belgaum</option>
+            <option value="Bangalore" class="form-control">Bangalore</option>
+            <option value="Pune" class="form-control">Pune</option>
+        </select>
+      </div>
+
+      <br>
+      <center>
+        <input type="submit" class="btn btn-primary" width="200%" aria-setsize="large">
+      </center>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
